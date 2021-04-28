@@ -1,0 +1,19 @@
+<mat-toolbar class="header">
+
+  <div class="header__title">
+    <button *ngIf="!isHome" class="header__title-button" mat-mini-fab (click)="openMenu()">
+      <mat-icon *ngIf="!isMenuOpened" class="header__title-button-icon">menu</mat-icon>
+      <mat-icon *ngIf="isMenuOpened" class="header__title-button-icon">arrow_back</mat-icon>
+    </button>
+    <img style="width:120px;" src="../../../../../assets/logo.png"/> 
+    
+  </div>
+
+  <div class="header-toolbar">
+    <app-search style="display:none;"></app-search>
+    <app-notifications *ngIf="!isHome"></app-notifications>
+    <app-email *ngIf="!isHome" [emails]="emails$ | async"></app-email>
+    <app-user [user]="user$ | async" (signOut)="signOut()"></app-user>
+  </div>
+
+</mat-toolbar>

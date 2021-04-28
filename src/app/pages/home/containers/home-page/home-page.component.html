@@ -1,0 +1,19 @@
+<app-layout>
+ 
+	<div (click)="loginPage()" class="home-main-image" > 
+		<div style="display: table-cell; vertical-align: middle;">
+		<div style="padding-top:50px;font-size:44px;font-weight:bold;color:rgb(97, 97, 97);">
+			Welcome to My Website
+		</div>
+		<div style="padding-top:20px;font-size:24px;font-weight:bold;color:rgb(112, 112, 112);">Click to Login</div>
+		</div>
+	</div> 
+	
+  <div class="tables-wrapper">
+    <app-material-table [materialTableDate]="materialTableData$ | async"></app-material-table>
+	<br><br>
+    <app-material-table [materialTableDate]="materialTableData$ | async"></app-material-table>
+  </div>
+
+  <app-footer></app-footer>
+</app-layout>
